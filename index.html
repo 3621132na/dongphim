@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Động Phim - Thế Giới Phim Miễn Phí</title>
+    <title id="meta-title">Động Phim - Thế Giới Phim Miễn Phí</title>
+    <meta name="description" id="meta-description" content="Xem phim mới nhất, chất lượng cao miễn phí.">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -14,9 +15,17 @@
         
         <div class="search-box">
             <input type="text" id="searchInput" placeholder="Tìm tên phim...">
-            <button onclick="changePage(1, 'search')">Tìm</button>
+            <button onclick="changePage(1)">Tìm</button>
         </div>
+        
         <div class="filters">
+            <select id="typeFilter" onchange="changePage(1)">
+                <option value="">Loại phim</option>
+                <option value="danh-sach/phim-bo">Phim bộ</option>
+                <option value="danh-sach/phim-le">Phim lẻ</option>
+                <option value="danh-sach/hoat-hinh">Hoạt hình</option>
+                <option value="danh-sach/tv-shows">TV Shows</option>
+            </select>
             <select id="genreFilter" onchange="changePage(1)">
                 <option value="">Thể loại</option>
             </select>
@@ -29,15 +38,18 @@
         </div>
     </div>
 </header>
+
 <main class="container">
     <div id="content">
         <div class="loading">Đang tải phim vui lòng chờ...</div>
     </div>
+    <div id="pagination" class="pagination"></div>
 </main>
+
 <footer>
-    <p>&copy; 2026 Pewnoy</p>
+    <p>&copy; 2026 Pewnoy | API by OPhim</p>
 </footer>
+
 <script src="script.js"></script>
 </body>
-
 </html>
